@@ -1,9 +1,6 @@
 package aoc2021;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 import aoc2021.meta.BaseDay;
 import aoc2021.meta.Gold;
@@ -14,17 +11,17 @@ import aoc2021.meta.Silver;
 public class Day01 extends BaseDay {
 
 	/**
-	 * Find the two entries that sum to 2020; what do you get if you multiply them together?
+	 * How many measurements are larger than the previous measurement?
 	 */
 	@Input
 	@Silver
 	@IntList
 	public String silver(List<Integer> lines) {
-		return solution(lines, 2);
+		return solution(lines, 1);
 	}
 	
 	/**
-	 * In your expense report, what is the product of the three entries that sum to 2020?
+	 * How many sums are larger than the previous sum?
 	 */
 	@Input
 	@Gold
@@ -33,13 +30,16 @@ public class Day01 extends BaseDay {
 		return solution(lines, 3);
 	}
 	
-	private String solution(List<Integer> lines, int numberOfElementsPerCombination) {
-		for (List<Integer> combination : new Combinations<Integer>(lines, numberOfElementsPerCombination)) {
-			int sum = combination.stream().mapToInt(x -> x).sum();
-			if (sum == 2020) {
-				return combination.stream().reduce(1, (var result, var element) -> result * element).toString();
+	private String solution(List<Integer> lines, int windowSize) {
+		Integer increasements = 0;
+		int last = Integer.MAX_VALUE;
+		for (int i=0; i < lines.size() - windowSize + 1; i++) {
+			Integer depth = lines.subList(i, i+windowSize).stream().mapToInt(x->x).sum();
+			if (depth > last) {
+				increasements++;
 			}
+			last = depth;
 		}
-		throw new IllegalStateException("found no solution");
+		return increasements.toString();
 	}
 }
