@@ -5,12 +5,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
-import aoc2021.day08.EntryParser;
-import aoc2021.day08.SignalPatternDecoder;
-import aoc2021.day09.HeightMap;
-import aoc2021.day09.HeightMapParser;
-import aoc2021.day09.HeightMapPoint;
+import aoc2021.days.day08.EntryParser;
+import aoc2021.days.day08.SignalPatternDecoder;
+import aoc2021.days.day09.HeightMap;
+import aoc2021.days.day09.HeightMapBasin;
+import aoc2021.days.day09.HeightMapParser;
+import aoc2021.days.day09.HeightMapPoint;
 import aoc2021.meta.BaseDay;
 import aoc2021.meta.Gold;
 import aoc2021.meta.Input;
@@ -19,7 +21,7 @@ import aoc2021.meta.Silver;
 public class Day09 extends BaseDay {
 	
 	/**
-	 * In the output values, how many times do digits 1, 4, 7, or 8 appear?
+	 * What is the sum of the risk levels of all low points on your heightmap?
 	 */
 	@Input
 	@Silver
@@ -31,32 +33,20 @@ public class Day09 extends BaseDay {
 	}
 
 	/**
-	 * What do you get if you add up all of the output values?
+	 * What do you get if you multiply together the sizes of the three largest basins?
 	 */
 	@Input
-	//@Gold
+	@Gold
 	public String gold(List<String> lines) {
-		List<List<Integer>> allOutputValues = solution(lines);
-		return ""+(allOutputValues.stream()
-				.mapToInt(x->Integer.parseInt(x.stream()
-						.map(Object::toString)
-						.collect(Collectors.joining())))
-				.sum());
-	}
-	
-	private List<List<Integer>> solution(List<String> lines) {
-		List<List<Integer>> allOutputValues = new ArrayList<>();
-		for (String line : lines) {
-			EntryParser parser = new EntryParser();
-			parser.parseLine(line);
-			List<Set<Character>> uniqueSignalPatterns = parser.getUniqueSignalPatterns();
-			List<Set<Character>> encodedOutputValue = parser.getEncodedOutputValue();
-			SignalPatternDecoder decoder = new SignalPatternDecoder();
-			decoder.train(uniqueSignalPatterns);
-			List<Integer> outputValue = decoder.decode(encodedOutputValue);
-			allOutputValues.add(outputValue);
-		}
-		return allOutputValues;
+		HeightMapParser parser = new HeightMapParser();
+		HeightMap map = parser.parse(lines);
+		Set<HeightMapBasin> lowPoints = map.getBasins();
+		return ""+lowPoints.stream()
+		.sorted((a,b) -> b.getSize().compareTo(a.getSize()))
+		.collect(Collectors.toList())
+		.subList(0, 3).stream()
+		.mapToInt(p -> p.getSize())
+		.reduce((a,b) -> a*b).getAsInt();
 	}
 
 }
