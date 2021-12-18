@@ -1,4 +1,4 @@
-package aoc2021.day13;
+package aoc2021.days.day13;
 
 public class FoldInstruction {
 	private int xAmount;

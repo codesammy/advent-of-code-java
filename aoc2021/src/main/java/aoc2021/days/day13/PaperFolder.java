@@ -1,6 +1,6 @@
-package aoc2021.day13;
+package aoc2021.days.day13;
 
-import aoc2021.day05.Point;
+import aoc2021.days.day05.Point;
 
 public class PaperFolder {
 

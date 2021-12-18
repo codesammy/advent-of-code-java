@@ -2,10 +2,10 @@ package aoc2021;
 
 import java.util.List;
 
-import aoc2021.day13.FoldInstruction;
-import aoc2021.day13.Paper;
-import aoc2021.day13.PaperFolder;
-import aoc2021.day13.PaperParser;
+import aoc2021.days.day13.FoldInstruction;
+import aoc2021.days.day13.Paper;
+import aoc2021.days.day13.PaperFolder;
+import aoc2021.days.day13.PaperParser;
 import aoc2021.meta.BaseDay;
 import aoc2021.meta.Gold;
 import aoc2021.meta.Input;

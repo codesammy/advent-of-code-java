@@ -1,11 +1,11 @@
-package aoc2021.day13;
+package aoc2021.days.day13;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import aoc2021.day05.Point;
+import aoc2021.days.day05.Point;
 
 public class Paper {
 	private Map<Point, PaperDot> dots;
