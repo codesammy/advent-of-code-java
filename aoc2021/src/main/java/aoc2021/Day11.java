@@ -1,13 +1,10 @@
 package aoc2021;
 
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
-import aoc2021.day10.ChunkParser;
-import aoc2021.day11.DumboOcatopusGridParser;
-import aoc2021.day11.DumboOcatopusGridSimulator;
-import aoc2021.day11.DumboOcotopusGrid;
+import aoc2021.days.day11.DumboOcatopusGridParser;
+import aoc2021.days.day11.DumboOcatopusGridSimulator;
+import aoc2021.days.day11.DumboOcotopusGrid;
 import aoc2021.meta.BaseDay;
 import aoc2021.meta.Gold;
 import aoc2021.meta.Input;

@@ -4,11 +4,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import aoc2021.day12.Cave;
-import aoc2021.day12.CaveParser;
-import aoc2021.day12.CavePath;
-import aoc2021.day12.CavePathFinder;
-import aoc2021.day12.CavePathNextMoves;
+import aoc2021.days.day12.Cave;
+import aoc2021.days.day12.CaveParser;
+import aoc2021.days.day12.CavePath;
+import aoc2021.days.day12.CavePathFinder;
+import aoc2021.days.day12.CavePathNextMoves;
 import aoc2021.meta.BaseDay;
 import aoc2021.meta.Gold;
 import aoc2021.meta.Input;

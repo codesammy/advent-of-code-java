@@ -4,10 +4,10 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.BiFunction;
 
-import aoc2021.day04.BingoBoard;
-import aoc2021.day04.BingoParser;
-import aoc2021.day04.BingoResult;
-import aoc2021.day04.BingoSimulator;
+import aoc2021.days.day04.BingoBoard;
+import aoc2021.days.day04.BingoParser;
+import aoc2021.days.day04.BingoResult;
+import aoc2021.days.day04.BingoSimulator;
 import aoc2021.meta.BaseDay;
 import aoc2021.meta.Gold;
 import aoc2021.meta.Input;

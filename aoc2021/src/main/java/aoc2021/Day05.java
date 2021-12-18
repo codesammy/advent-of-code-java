@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.Predicate;
 
-import aoc2021.day05.LineSegment;
-import aoc2021.day05.LineSegmentParser;
-import aoc2021.day05.Point;
+import aoc2021.days.day05.LineSegment;
+import aoc2021.days.day05.LineSegmentParser;
+import aoc2021.days.day05.Point;
 import aoc2021.meta.BaseDay;
 import aoc2021.meta.Gold;
 import aoc2021.meta.Input;

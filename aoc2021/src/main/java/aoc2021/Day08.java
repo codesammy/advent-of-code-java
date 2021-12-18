@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import aoc2021.day08.EntryParser;
-import aoc2021.day08.SignalPatternDecoder;
+import aoc2021.days.day08.EntryParser;
+import aoc2021.days.day08.SignalPatternDecoder;
 import aoc2021.meta.BaseDay;
 import aoc2021.meta.Gold;
 import aoc2021.meta.Input;

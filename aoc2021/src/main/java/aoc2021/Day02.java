@@ -2,15 +2,15 @@ package aoc2021;
 
 import java.util.List;
 
-import aoc2021.day02.AimDownCommand;
-import aoc2021.day02.AimForwardCommand;
-import aoc2021.day02.AimUpCommand;
-import aoc2021.day02.MoveDownCommand;
-import aoc2021.day02.MoveForwardCommand;
-import aoc2021.day02.MoveUpCommand;
-import aoc2021.day02.Submarine;
-import aoc2021.day02.SubmarineCommand;
-import aoc2021.day02.SubmarineCommandParser;
+import aoc2021.days.day02.AimDownCommand;
+import aoc2021.days.day02.AimForwardCommand;
+import aoc2021.days.day02.AimUpCommand;
+import aoc2021.days.day02.MoveDownCommand;
+import aoc2021.days.day02.MoveForwardCommand;
+import aoc2021.days.day02.MoveUpCommand;
+import aoc2021.days.day02.Submarine;
+import aoc2021.days.day02.SubmarineCommand;
+import aoc2021.days.day02.SubmarineCommandParser;
 import aoc2021.meta.BaseDay;
 import aoc2021.meta.Gold;
 import aoc2021.meta.Input;

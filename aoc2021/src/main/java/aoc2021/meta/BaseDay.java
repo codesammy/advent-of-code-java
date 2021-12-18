@@ -34,7 +34,10 @@ public class BaseDay {
 		if (silver == null && gold == null) {
 			return;
 		}
-		URL inputResource = clazz.getResource(prefix+clazz.getSimpleName()+"/input.sample");
+		URL inputResource = clazz.getResource(prefix+clazz.getSimpleName()+"/input.sample"+suffix);
+		if (inputResource == null) {
+		    inputResource = clazz.getResource(prefix+clazz.getSimpleName()+"/input.sample");
+		}
 		if (inputResource != null) {
 			// do a sample run
 			URL outputResource = clazz.getResource(prefix+clazz.getSimpleName()+"/output.sample"+suffix);
